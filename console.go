@@ -110,6 +110,7 @@ func (h *ConsoleHandler) Handle(_ context.Context, r slog.Record) error {
 		out.WriteString(fmt.Sprintf("%v", v))
 		out.WriteString(" ")
 	}
+	out.WriteString("\n")
 
 	h.mu.Lock()
 	defer h.mu.Unlock()
